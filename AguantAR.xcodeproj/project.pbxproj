@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		AD82FB5E20BC80A700F8389B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB5D20BC80A700F8389B /* AppDelegate.swift */; };
 		AD82FB6020BC80A700F8389B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AD82FB5F20BC80A700F8389B /* art.scnassets */; };
-		AD82FB6220BC80A700F8389B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB6120BC80A700F8389B /* ViewController.swift */; };
 		AD82FB6520BC80A700F8389B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD82FB6320BC80A700F8389B /* Main.storyboard */; };
 		AD82FB6720BC80A900F8389B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD82FB6620BC80A900F8389B /* Assets.xcassets */; };
 		AD82FB6A20BC80A900F8389B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD82FB6820BC80A900F8389B /* LaunchScreen.storyboard */; };
 		AD82FB7520BC80A900F8389B /* AguantARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB7420BC80A900F8389B /* AguantARTests.swift */; };
 		AD82FB8020BC80A900F8389B /* AguantARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB7F20BC80A900F8389B /* AguantARUITests.swift */; };
+		AD82FB8E20BC81FB00F8389B /* Ext_SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB8D20BC81FB00F8389B /* Ext_SCNVector3.swift */; };
+		AD82FB9020BC8D4D00F8389B /* Ext_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB8F20BC8D4D00F8389B /* Ext_UIImage.swift */; };
+		AD82FB9220BC90BE00F8389B /* ScreenCaptureUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9120BC90BE00F8389B /* ScreenCaptureUtility.swift */; };
+		AD82FB9420BC939A00F8389B /* SCNNodeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9320BC939A00F8389B /* SCNNodeContainer.swift */; };
+		AD82FB9620BC94CD00F8389B /* ProyectilN.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9520BC94CD00F8389B /* ProyectilN.swift */; };
+		AD82FB9820BC95E600F8389B /* EnemigoN.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9720BC95E600F8389B /* EnemigoN.swift */; };
+		AD82FB9A20BC96B900F8389B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9920BC96B900F8389B /* StartViewController.swift */; };
+		AD82FB9C20BC986000F8389B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9B20BC986000F8389B /* GameViewController.swift */; };
+		AD82FB9E20BC9BCF00F8389B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9D20BC9BCF00F8389B /* Game.swift */; };
+		AD82FBA020BC9BF200F8389B /* Nivel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9F20BC9BF200F8389B /* Nivel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,6 @@
 		AD82FB5A20BC80A700F8389B /* AguantAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AguantAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD82FB5D20BC80A700F8389B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD82FB5F20BC80A700F8389B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		AD82FB6120BC80A700F8389B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD82FB6420BC80A700F8389B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD82FB6620BC80A900F8389B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD82FB6920BC80A900F8389B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,16 @@
 		AD82FB7B20BC80A900F8389B /* AguantARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AguantARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD82FB7F20BC80A900F8389B /* AguantARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AguantARUITests.swift; sourceTree = "<group>"; };
 		AD82FB8120BC80A900F8389B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD82FB8D20BC81FB00F8389B /* Ext_SCNVector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_SCNVector3.swift; sourceTree = "<group>"; };
+		AD82FB8F20BC8D4D00F8389B /* Ext_UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIImage.swift; sourceTree = "<group>"; };
+		AD82FB9120BC90BE00F8389B /* ScreenCaptureUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureUtility.swift; sourceTree = "<group>"; };
+		AD82FB9320BC939A00F8389B /* SCNNodeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNodeContainer.swift; sourceTree = "<group>"; };
+		AD82FB9520BC94CD00F8389B /* ProyectilN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectilN.swift; sourceTree = "<group>"; };
+		AD82FB9720BC95E600F8389B /* EnemigoN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemigoN.swift; sourceTree = "<group>"; };
+		AD82FB9920BC96B900F8389B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		AD82FB9B20BC986000F8389B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AD82FB9D20BC9BCF00F8389B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		AD82FB9F20BC9BF200F8389B /* Nivel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nivel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +119,20 @@
 			children = (
 				AD82FB5D20BC80A700F8389B /* AppDelegate.swift */,
 				AD82FB5F20BC80A700F8389B /* art.scnassets */,
-				AD82FB6120BC80A700F8389B /* ViewController.swift */,
 				AD82FB6320BC80A700F8389B /* Main.storyboard */,
 				AD82FB6620BC80A900F8389B /* Assets.xcassets */,
 				AD82FB6820BC80A900F8389B /* LaunchScreen.storyboard */,
 				AD82FB6B20BC80A900F8389B /* Info.plist */,
+				AD82FB8D20BC81FB00F8389B /* Ext_SCNVector3.swift */,
+				AD82FB8F20BC8D4D00F8389B /* Ext_UIImage.swift */,
+				AD82FB9120BC90BE00F8389B /* ScreenCaptureUtility.swift */,
+				AD82FB9320BC939A00F8389B /* SCNNodeContainer.swift */,
+				AD82FB9520BC94CD00F8389B /* ProyectilN.swift */,
+				AD82FB9720BC95E600F8389B /* EnemigoN.swift */,
+				AD82FB9920BC96B900F8389B /* StartViewController.swift */,
+				AD82FB9B20BC986000F8389B /* GameViewController.swift */,
+				AD82FB9D20BC9BCF00F8389B /* Game.swift */,
+				AD82FB9F20BC9BF200F8389B /* Nivel.swift */,
 			);
 			path = AguantAR;
 			sourceTree = "<group>";
@@ -260,8 +287,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD82FB6220BC80A700F8389B /* ViewController.swift in Sources */,
+				AD82FBA020BC9BF200F8389B /* Nivel.swift in Sources */,
+				AD82FB9C20BC986000F8389B /* GameViewController.swift in Sources */,
+				AD82FB9E20BC9BCF00F8389B /* Game.swift in Sources */,
+				AD82FB9420BC939A00F8389B /* SCNNodeContainer.swift in Sources */,
+				AD82FB9620BC94CD00F8389B /* ProyectilN.swift in Sources */,
+				AD82FB9820BC95E600F8389B /* EnemigoN.swift in Sources */,
+				AD82FB9020BC8D4D00F8389B /* Ext_UIImage.swift in Sources */,
+				AD82FB9A20BC96B900F8389B /* StartViewController.swift in Sources */,
+				AD82FB8E20BC81FB00F8389B /* Ext_SCNVector3.swift in Sources */,
 				AD82FB5E20BC80A700F8389B /* AppDelegate.swift in Sources */,
+				AD82FB9220BC90BE00F8389B /* ScreenCaptureUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
