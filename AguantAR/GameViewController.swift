@@ -203,6 +203,7 @@ class GameViewController: UIViewController, GameDelegate{
         var position: SCNVector3
         var convertedPosition: SCNVector3
         var direction : SCNVector3
+        
         switch type {
             
         case .enemy:
@@ -338,7 +339,7 @@ extension GameViewController : ARSCNViewDelegate{
             }else{
                 // Comprueba si se choca contra el jugador
                 if laser.node.physicsBody?.contactTestBitMask == PhysicsMask.enemyBullet
-                    && laser.node.position.distance(vector: sceneView.pointOfView!.position) < 0.03{
+                    && laser.node.position.distance(vector: sceneView.pointOfView!.position) < 0.01{
                     laser.node.removeFromParentNode()
                     proyectiles.remove(at: i)
                     game.health -= 1

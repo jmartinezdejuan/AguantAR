@@ -27,7 +27,6 @@ enum NivelType {
 class Nivel {
     
     var health : Int
-    let power : Int
     let scoreReward : Int
     var shotCount = 0
     let shotFreq : Int // Frecuencia con la que intenta disparar
@@ -41,11 +40,10 @@ class Nivel {
     let frontImage : UIImage
     let backImage : UIImage
     
-    init(health: Int, power: Int, shotFreq: Int, shotProbHigh: Int, shotProbLow: Int, type: NivelType){
+    init(health: Int, shotFreq: Int, shotProbHigh: Int, shotProbLow: Int, type: NivelType){
         
         self.health = health
         self.scoreReward = health * 10
-        self.power = power
         self.shotFreq = shotFreq
         self.shotProbLow = shotProbLow
         self.shotProbHigh = shotProbHigh
@@ -58,12 +56,11 @@ class Nivel {
     
     func shouldShoot() -> Bool { // runs 60 fps
         shotCount += 1
-        var a = false
+        //let a = false
         if(shotCount == shotFreq){
             shotCount = 0
             //arc4random_uniform(X) devuelve un numero al azar entre 0 y X
-            let rand = arc4random_uniform(UInt32(shotProb))
-            return a ? rand == 0 : rand != 0
+            return arc4random_uniform(UInt32(shotProb)) == 0
         }
         return false
     }

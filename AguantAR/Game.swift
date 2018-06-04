@@ -13,7 +13,6 @@ class Game {
     var delegate : GameDelegate?
     
     let cooldown = 0.3 // Tiempo que debe esperar el jugador para volver a disparar
-    let power = 1 // potencia de cada proyectil
     var health = 100  { // Vida del jugador
         didSet{
             delegate?.healthDidChange()
@@ -39,7 +38,7 @@ class Game {
     let maxEnemigos = 20 // maximo numero de enemigos a la vez
     var winLoseFlag : Bool? // Control de si ha ganado, perdido, o aun nada
     
-    var goalScore = 20 // Puntuacion necesaria para ganar
+    var goalScore = 50 // Puntuacion necesaria para ganar
     
     var score = 0 { // Guarda el score actual
         didSet{
@@ -54,14 +53,14 @@ class Game {
             spawnCount = 0
             if(arc4random_uniform(spawnProb) == 0){
                 switch (score){
-                case 0..<6 :
-                    return Nivel(health: 1, power: 1, shotFreq: 80, shotProbHigh: 3, shotProbLow: 2, type: .diana)
-                case 6..<11 :
-                    return Nivel(health: 3, power: 2, shotFreq: 60, shotProbHigh: 10, shotProbLow: 2, type: .roto2)
-                case 11..<16 :
-                    return Nivel(health: 5, power: 3, shotFreq: 30, shotProbHigh: 10, shotProbLow: 2, type: .alonso)
-                case 16..<21 :
-                    return Nivel(health: 10, power: 5, shotFreq: 20, shotProbHigh: 0, shotProbLow: 0, type: .jorge)
+                case 0..<10 :
+                    return Nivel(health: 1, shotFreq: 40, shotProbHigh: 10, shotProbLow: 5, type: .diana)
+                case 10..<20 :
+                    return Nivel(health: 3, shotFreq: 20, shotProbHigh: 8, shotProbLow: 4, type: .roto2)
+                case 20..<30 :
+                    return Nivel(health: 5, shotFreq: 12, shotProbHigh: 6, shotProbLow: 3, type: .alonso)
+                case 30..<51 :
+                    return Nivel(health: 10, shotFreq: 8, shotProbHigh: 2, shotProbLow: 1, type: .jorge)
                 default:
                     print("adios")
                 }
