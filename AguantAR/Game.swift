@@ -55,13 +55,13 @@ class Game {
             if(arc4random_uniform(spawnProb) == 0){
                 switch (score){
                 case 0..<6 :
-                    return Nivel(health: 1, power: 1, shotFreq: 80, shotProbHigh: 10, shotProbLow: 2, type: .diana)
+                    return Nivel(health: 1, power: 1, shotFreq: 80, shotProbHigh: 3, shotProbLow: 2, type: .diana)
                 case 6..<11 :
                     return Nivel(health: 3, power: 2, shotFreq: 60, shotProbHigh: 10, shotProbLow: 2, type: .roto2)
                 case 11..<16 :
-                    return Nivel(health: 5, power: 3, shotFreq: 30, shotProbHigh: 20, shotProbLow: 4, type: .alonso)
+                    return Nivel(health: 5, power: 3, shotFreq: 30, shotProbHigh: 10, shotProbLow: 2, type: .alonso)
                 case 16..<21 :
-                    return Nivel(health: 1, power: 1, shotFreq: 0, shotProbHigh: 0, shotProbLow: 0, type: .jorge)
+                    return Nivel(health: 10, power: 5, shotFreq: 20, shotProbHigh: 0, shotProbLow: 0, type: .jorge)
                 default:
                     print("adios")
                 }

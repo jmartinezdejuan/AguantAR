@@ -31,13 +31,13 @@ class Nivel {
     let scoreReward : Int
     var shotCount = 0
     let shotFreq : Int // Frecuencia con la que intenta disparar
-    var shotProb : Int { //Probabilidad de aciertoal disparar = (Chance = 1/shotProb)
+    var shotProb : Int { //Probabilidad de acierto al disparar = 1/shotProb)
         return cercania ? shotProbHigh : shotProbLow
     }
     private let shotProbHigh : Int
     private let shotProbLow : Int
     
-    var cercania = false // Whether it is in the goldilocks zone
+    var cercania = false
     let frontImage : UIImage
     let backImage : UIImage
     
@@ -58,9 +58,12 @@ class Nivel {
     
     func shouldShoot() -> Bool { // runs 60 fps
         shotCount += 1
+        var a = false
         if(shotCount == shotFreq){
             shotCount = 0
-            return arc4random_uniform(UInt32(shotProb)) == 0
+            //arc4random_uniform(X) devuelve un numero al azar entre 0 y X
+            let rand = arc4random_uniform(UInt32(shotProb))
+            return a ? rand == 0 : rand != 0
         }
         return false
     }
