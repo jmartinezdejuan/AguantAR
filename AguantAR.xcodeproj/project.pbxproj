@@ -16,7 +16,6 @@
 		AD82FB8020BC80A900F8389B /* AguantARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB7F20BC80A900F8389B /* AguantARUITests.swift */; };
 		AD82FB8E20BC81FB00F8389B /* Ext_SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB8D20BC81FB00F8389B /* Ext_SCNVector3.swift */; };
 		AD82FB9020BC8D4D00F8389B /* Ext_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB8F20BC8D4D00F8389B /* Ext_UIImage.swift */; };
-		AD82FB9220BC90BE00F8389B /* ScreenCaptureUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9120BC90BE00F8389B /* ScreenCaptureUtility.swift */; };
 		AD82FB9420BC939A00F8389B /* SCNNodeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9320BC939A00F8389B /* SCNNodeContainer.swift */; };
 		AD82FB9620BC94CD00F8389B /* ProyectilN.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9520BC94CD00F8389B /* ProyectilN.swift */; };
 		AD82FB9820BC95E600F8389B /* EnemigoN.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82FB9720BC95E600F8389B /* EnemigoN.swift */; };
@@ -59,7 +58,6 @@
 		AD82FB8120BC80A900F8389B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD82FB8D20BC81FB00F8389B /* Ext_SCNVector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_SCNVector3.swift; sourceTree = "<group>"; };
 		AD82FB8F20BC8D4D00F8389B /* Ext_UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIImage.swift; sourceTree = "<group>"; };
-		AD82FB9120BC90BE00F8389B /* ScreenCaptureUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureUtility.swift; sourceTree = "<group>"; };
 		AD82FB9320BC939A00F8389B /* SCNNodeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNodeContainer.swift; sourceTree = "<group>"; };
 		AD82FB9520BC94CD00F8389B /* ProyectilN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectilN.swift; sourceTree = "<group>"; };
 		AD82FB9720BC95E600F8389B /* EnemigoN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemigoN.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				AD82FB6B20BC80A900F8389B /* Info.plist */,
 				AD82FB8D20BC81FB00F8389B /* Ext_SCNVector3.swift */,
 				AD82FB8F20BC8D4D00F8389B /* Ext_UIImage.swift */,
-				AD82FB9120BC90BE00F8389B /* ScreenCaptureUtility.swift */,
 				AD82FB9320BC939A00F8389B /* SCNNodeContainer.swift */,
 				AD82FB9520BC94CD00F8389B /* ProyectilN.swift */,
 				AD82FB9720BC95E600F8389B /* EnemigoN.swift */,
@@ -297,7 +294,6 @@
 				AD82FB9A20BC96B900F8389B /* StartViewController.swift in Sources */,
 				AD82FB8E20BC81FB00F8389B /* Ext_SCNVector3.swift in Sources */,
 				AD82FB5E20BC80A700F8389B /* AppDelegate.swift in Sources */,
-				AD82FB9220BC90BE00F8389B /* ScreenCaptureUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

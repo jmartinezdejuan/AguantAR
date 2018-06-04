@@ -51,9 +51,6 @@ class GameViewController: UIViewController, GameDelegate{
     let sidePadding : CGFloat = 20
     
     
-    var isRecording = true // Used to toggle screen recording
-    
-    
     //MARK: GameDelegate Functions
     
     func scoreDidChange() {
@@ -176,9 +173,6 @@ class GameViewController: UIViewController, GameDelegate{
         winNode.attributedText = NSAttributedString(string: hasWon ? "Has ganado!" : "Has perdido!", attributes: titleAttributes)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-            if self.isRecording {
-                self.handleThreeFingerTap(sender: UITapGestureRecognizer())
-            }
             self.performSegue(withIdentifier: "unwind", sender: self)
         })
     }
@@ -192,7 +186,7 @@ class GameViewController: UIViewController, GameDelegate{
     }
     
     @objc func handleThreeFingerTap(sender: UITapGestureRecognizer){
-        ScreenCaptureUtility.shared.toggleRecording()
+        game.health += 20
     }
     
     //MARK: Game Actions
