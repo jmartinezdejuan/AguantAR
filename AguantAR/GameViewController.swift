@@ -46,6 +46,7 @@ class GameViewController: UIViewController, GameDelegate{
     var livesNode : SKLabelNode!
     var winNode : SKLabelNode!
     var radarNode : SKShapeNode!
+    var norteNode : SKShapeNode!
     
     let topPadding : CGFloat = 40
     let sidePadding : CGFloat = 20
@@ -112,27 +113,35 @@ class GameViewController: UIViewController, GameDelegate{
     private func setupGestureRecognizers(){
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
         let threeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleThreeFingerTap(sender:)))
-        
+        let fourTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleFourFingerTap(sender:)))
         threeTapRecognizer.numberOfTouchesRequired = 3
         tapRecognizer.numberOfTouchesRequired = 1
-        
+        fourTapRecognizer.numberOfTouchesRequired = 4
         sceneView.addGestureRecognizer(tapRecognizer)
         sceneView.addGestureRecognizer(threeTapRecognizer)
+        sceneView.addGestureRecognizer(fourTapRecognizer)
     }
     
     private func setupRadar(){
         let size = sceneView.bounds.size
         
-        radarNode = SKShapeNode(circleOfRadius: 40)
-        radarNode.position = CGPoint(x: (size.width - 40) - sidePadding, y: 50 + sidePadding)
-        radarNode.strokeColor = .black
-        radarNode.glowWidth = 5
-        radarNode.fillColor = .white
-        sceneView.overlaySKScene?.addChild(radarNode)
         
-        for i in (1...3){
-            let ringNode = SKShapeNode(circleOfRadius: CGFloat(i * 10))
-            ringNode.strokeColor = .black
+        radarNode = SKShapeNode(circleOfRadius: 60)
+        //radarNode.position = CGPoint(x: (size.width - 40) - sidePadding, y: 50 + sidePadding)
+        radarNode.position = CGPoint(x: size.width/2, y: (size.height - 80 - topPadding))
+        radarNode.strokeColor = .blue
+        radarNode.glowWidth = 5
+        radarNode.fillColor = .gray
+        radarNode.alpha = 0.4
+        sceneView.overlaySKScene?.addChild(radarNode)
+        norteNode = SKShapeNode(rectOf: CGSize(width: 2, height: 60))
+        norteNode.fillColor = .brown
+        norteNode.position.x = radarNode.position.x
+        norteNode.position.y = radarNode.position.y + 30
+        sceneView.overlaySKScene?.addChild(norteNode)
+        for i in (1...4){
+            let ringNode = SKShapeNode(circleOfRadius: CGFloat(i * 12))
+            ringNode.strokeColor = .green
             ringNode.glowWidth = 0.2
             ringNode.name = "Ring"
             ringNode.position = radarNode.position
@@ -140,9 +149,9 @@ class GameViewController: UIViewController, GameDelegate{
         }
         
         for _ in (0..<(game.maxEnemigos)){
-            let blip = SKShapeNode(circleOfRadius: 5)
+            let blip = SKShapeNode(circleOfRadius: 3)
             blip.fillColor = .red
-            blip.strokeColor = .clear
+            blip.strokeColor = .black
             blip.alpha = 0
             radarNode.addChild(blip)
         }
@@ -187,6 +196,11 @@ class GameViewController: UIViewController, GameDelegate{
     
     @objc func handleThreeFingerTap(sender: UITapGestureRecognizer){
         game.health += 20
+    }
+    
+    @objc func handleFourFingerTap(sender: UITapGestureRecognizer){
+        
+        // sceneView.scene.rootNode.addChildNode(enemigoNode.node)
     }
     
     //MARK: Game Actions
@@ -333,7 +347,7 @@ extension GameViewController : ARSCNViewDelegate{
             }else{
                 // Comprueba si se choca contra el jugador
                 if laser.node.physicsBody?.contactTestBitMask == PhysicsMask.enemyBullet
-                    && laser.node.position.distance(vector: sceneView.pointOfView!.position) < 0.01{
+                    && laser.node.position.distance(vector: sceneView.pointOfView!.position) < 0.03{
                     laser.node.removeFromParentNode()
                     proyectiles.remove(at: i)
                     game.health -= 1
