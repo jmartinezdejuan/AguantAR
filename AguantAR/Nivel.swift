@@ -56,7 +56,6 @@ class Nivel {
     
     func shouldShoot() -> Bool { // runs 60 fps
         shotCount += 1
-        //let a = false
         if(shotCount == shotFreq){
             shotCount = 0
             //arc4random_uniform(X) devuelve un numero al azar entre 0 y X
