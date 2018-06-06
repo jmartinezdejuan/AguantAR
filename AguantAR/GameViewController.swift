@@ -132,7 +132,7 @@ class GameViewController: UIViewController, GameDelegate{
         radarNode.strokeColor = .blue
         radarNode.glowWidth = 5
         radarNode.fillColor = .gray
-        radarNode.alpha = 0.4
+        radarNode.alpha = 0.7
         sceneView.overlaySKScene?.addChild(radarNode)
         norteNode = SKShapeNode(rectOf: CGSize(width: 2, height: 60))
         norteNode.fillColor = .brown
@@ -152,7 +152,8 @@ class GameViewController: UIViewController, GameDelegate{
             let blip = SKShapeNode(circleOfRadius: 3)
             blip.fillColor = .red
             blip.strokeColor = .black
-            blip.alpha = 0
+            blip.alpha = 1
+           // sceneView.overlaySKScene?.addChild(blip)
             radarNode.addChild(blip)
         }
         
@@ -161,8 +162,8 @@ class GameViewController: UIViewController, GameDelegate{
     private func setupLabels(){
         let size = sceneView.bounds.size
         
-        scoreNode = SKLabelNode(attributedText: NSAttributedString(string: "Score: \(game.score)", attributes: stringAttributes))
-        livesNode = SKLabelNode(attributedText: NSAttributedString(string: "Health: \(game.health)", attributes: stringAttributes))
+        scoreNode = SKLabelNode(attributedText: NSAttributedString(string: "Puntos: \(game.score)", attributes: stringAttributes))
+        livesNode = SKLabelNode(attributedText: NSAttributedString(string: "Vida: \(game.health)", attributes: stringAttributes))
         winNode = SKLabelNode(text: "Default")
         winNode.alpha = 0
         
@@ -319,10 +320,10 @@ extension GameViewController : ARSCNViewDelegate{
             if i < enemigos.count {
                 let enemigo = enemigos[i]
                 blip.alpha = 1
-                // Coge la posicion del alien recien aparecido en funcion de la nuestra
+                // Coge la posicion del ene,igo recien aparecido en funcion de la nuestra
                 let relativePosition = sceneView.pointOfView!.convertPosition(enemigo.node.position, from: nil)
                 // Multiplica por 10 porque son valores muy pequeños
-                var x = relativePosition.x * 10
+                var x = relativePosition.x * 12
                 // Coge como y la z ya que pasa de 3D a 2D
                 var y = relativePosition.z * -10
                 if x >= 0 { x = min(x, 35) } else { x = max(x, -35)}
