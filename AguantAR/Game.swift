@@ -13,7 +13,7 @@ class Game {
     var delegate : GameDelegate?
     
     let cooldown = 0.3 // Tiempo que debe esperar el jugador para volver a disparar
-    var health = 100  { // Vida del jugador
+    var health = 50  { // Vida del jugador
         didSet{
             delegate?.healthDidChange()
         }
