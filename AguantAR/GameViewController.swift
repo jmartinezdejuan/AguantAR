@@ -55,7 +55,7 @@ class GameViewController: UIViewController, GameDelegate{
     //MARK: GameDelegate Functions
     
     func scoreDidChange() {
-        scoreNode.attributedText = NSMutableAttributedString(string: "Score: \(game.score)", attributes: stringAttributes)
+        scoreNode.attributedText = NSMutableAttributedString(string: "Puntos: \(game.score)", attributes: stringAttributes)
         if game.score >= game.goalScore {
             game.winLoseFlag = true
             showFinish()
@@ -64,7 +64,7 @@ class GameViewController: UIViewController, GameDelegate{
     
     func healthDidChange() {
         
-        livesNode.attributedText = NSAttributedString(string: "Health: \(game.health)", attributes: stringAttributes)
+        livesNode.attributedText = NSAttributedString(string: "Vida: \(game.health)", attributes: stringAttributes)
         if game.health <= 0 {
             game.winLoseFlag = false
             showFinish()
@@ -124,10 +124,7 @@ class GameViewController: UIViewController, GameDelegate{
     
     private func setupRadar(){
         let size = sceneView.bounds.size
-        
-        
         radarNode = SKShapeNode(circleOfRadius: 60)
-        //radarNode.position = CGPoint(x: (size.width - 40) - sidePadding, y: 50 + sidePadding)
         radarNode.position = CGPoint(x: size.width/2, y: (size.height - 80 - topPadding))
         radarNode.strokeColor = .blue
         radarNode.glowWidth = 5
@@ -147,13 +144,11 @@ class GameViewController: UIViewController, GameDelegate{
             ringNode.position = radarNode.position
             sceneView.overlaySKScene?.addChild(ringNode)
         }
-        
         for _ in (0..<(game.maxEnemigos)){
             let blip = SKShapeNode(circleOfRadius: 3)
             blip.fillColor = .red
             blip.strokeColor = .black
             blip.alpha = 1
-           // sceneView.overlaySKScene?.addChild(blip)
             radarNode.addChild(blip)
         }
         
@@ -225,10 +220,6 @@ class GameViewController: UIViewController, GameDelegate{
             position = SCNVector3Make(0, 0, -0.05)
             convertedPosition = node.convertPosition(position, to: nil)
             direction = convertedPosition - pov.position
-            print(convertedPosition.x)
-            print(convertedPosition.y)
-            print(convertedPosition.z)
-            print("------------------")
         }
         
         let laser = ProyectilN(initialPosition: convertedPosition, direction: direction, type: type)
